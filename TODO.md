@@ -1,0 +1,50 @@
+## to-do list
+
+- Saving file.
+- Creating swap file.
+- Handling existing swap files before opening original file (like in VIM).
+- Inserting a new line in cell when pressing ENTER.
+- Deletion continuation to previous row with deleting last empty line in cell.
+- Unwrapping following line to preceding line while deletion when the unwrapped text fits in previous line.
+- Deleting all whitespaces before next vertical line.
+- Deleting all but one whitespace before next vertical line.
+- Deleting empty bottom lines in all cells.
+- Display help when F1 pressed.
+- Switch to editing from help when ESC pressed.
+- Reserve white status bar at the bottom line.
+- Display funny info when the size of the terminal is too small.
+- Repaint only required regions.
+- Repaint while terminal window is resized.
+- Handle mouse clicks.
+- Scroll view when the content is larger than width/height of the terminal.
+- Disable editing rule numbers - adjust rule numbers automatically.
+- Disable free editing of the hit policy - accept only allowed characters.
+- Insert decision rule.
+- Delete decision rule.
+- Reposition decision rule (up<->down (horizontal), left<->right (vertical)).
+- Add input clause.
+- Delete input clause.
+- Reposition input clause.
+- Add output clause.
+- Delete output clause.
+- Reposition output clause.
+- Add annotation clause.
+- Remove annotation clause.
+- Reposition annotation clause.
+- Join cells.
+- Split cells.
+- When information item name present - edit separately from the table.
+- Hide cursor when repainting.
+- Undo/Redo.
+- Enter (wrapping rows).
+- Delete multirow.
+- Replace mode.
+- Insert after mode.
+- Jump to row above/below when moving horizontally.
+- Consider using: https://github.com/gyscos/cursive
+- Add option to save example decision tables.
+- Add initializer screen with selecting options for new decision tables.
+- Interactive decision table initializer.
+- Recognize decision table on input.
+- Parse and compile decision table.
+- Evaluate decision table with test data.

@@ -1,0 +1,20 @@
+[package]
+name = "dmntk-atto"
+version = "0.0.9"
+authors = ["Dariusz Depta <dariusz.depta@dmntk.io>"]
+description = "DMNTK | Decision table editor"
+documentation = "https://docs.rs/dmntk-atto"
+repository = "https://github.com/dmntk-io/dmntk.atto.rs.git"
+license = "MIT OR Apache-2.0"
+edition = "2021"
+
+[[bin]]
+name = "atto"
+path = "src/main.rs"
+
+[dependencies]
+clap = "4.3.19"
+ncurses = { version = "5.101.0", features = ["wide", "extended_colors"] }
+
+[dev-dependencies]
+difference = "2.0.0"
