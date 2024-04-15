@@ -1,35 +1,3 @@
-/*
- * DMNTK - Decision Model and Notation Toolkit
- *
- * MIT license
- *
- * Copyright (c) 2015-2023 Dariusz Depta, Engos Software
- *
- * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
- * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
- * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
- * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
- * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
- * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
- * SOFTWARE.
- *
- * Apache license, Version 2.0
- *
- * Copyright (c) 2015-2023 Dariusz Depta, Engos Software
- *
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- *
- *     http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
- */
-
 use crate::errors::*;
 use crate::keys::*;
 use crate::plane::*;
@@ -80,7 +48,7 @@ impl Editor {
   /// Initializes terminal via ncurses.
   pub fn initialize() -> WINDOW {
     let locale_conf = LcCategory::all;
-    setlocale(locale_conf, "en_US.UTF-8");
+    let _ = setlocale(locale_conf, "en_US.UTF-8");
     let window = initscr();
     raw();
     keypad(window, true);
@@ -107,7 +75,7 @@ impl Editor {
     let mut max_y = 0;
     getmaxyx(self.window, &mut max_y, &mut max_x);
     getyx(self.window, &mut cur_y, &mut cur_x);
-    mvaddstr(
+    let _ = mvaddstr(
       max_y - 1,
       max_x - 20,
       &format!("{:>20}", format!("{}:{} ", self.plane.cursor_col(), self.plane.cursor_row())),
@@ -119,8 +87,8 @@ impl Editor {
   pub fn repaint_plane(&self) {
     for (r, row) in self.plane.chars.iter().enumerate() {
       mv(r as i32, 0);
-      addstr(&row.iter().collect::<String>());
-      addstr("  ");
+      let _ = addstr(&row.iter().collect::<String>());
+      let _ = addstr("  ");
     }
   }
 
