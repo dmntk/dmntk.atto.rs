@@ -408,7 +408,6 @@ impl Plane {
     self.row
   }
 
-  ///
   fn is_whitespace_before_vert_line(&self) -> (bool, usize) {
     let mut count = 0;
     let mut offset = 0;
@@ -425,7 +424,6 @@ impl Plane {
     (count > 0, offset)
   }
 
-  ///
   fn insert_column_before_vert_line(&mut self, col_pos: usize) {
     let (skip, take) = self.rows_skip_and_take(Op::Insert);
     for (row_index, row) in self.chars.iter_mut().enumerate().skip(skip).take(take) {
